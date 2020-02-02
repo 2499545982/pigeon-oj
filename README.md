@@ -4,21 +4,26 @@ HUSTOJ，一个流行的信息学在线评测系统。跨平台，易安装，�
 
 本项目是其2.0版本
 
-中文 | ~~ENGLISH~~
+中文  |  ~~English~~
+
+[一键安装脚本（拿来就用）]()
+[正常安装（可自由定制）](#目录)
 
 ## 目录
 
 > 1. [环境搭建](#环境搭建)
-> 2. [部署PigeonOJ](#部署PigeonPJ)
-> 3. [常见问题](#常见问题)
+> 2. [配置Docker加速器](#配置Docker加速器（可选）)
+> 3. [部署PigeonOJ](#部署PigeonPJ)
+> 4. [常见问题](#常见问题)
 
 ---
 
 ## 环境搭建
 
-### 安装Docker
+> 1. [Linux](#Linux环境)
+> 2. [Windows](#Windows环境)
 
-#### Linux 环境
+### Linux 环境
 
 1. 安装必要的依赖
 
@@ -49,11 +54,11 @@ HUSTOJ，一个流行的信息学在线评测系统。跨平台，易安装，�
     
     详细步骤参照： [https://docs.docker.com/install/](https://docs.docker.com/install/)
 
-#### Windows 环境
+### Windows 环境
 
-Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请使用虚拟机安装 Linux 并将 OJ 安装在其中。
+**提示：Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请使用虚拟机安装 Linux 并将 OJ 安装在其中。**
 
-##### Windows 10 专业版/教育版/企业版 x64 (Build 15063 or later)
+#### Windows 10 专业版/教育版/企业版 x64 (Build 15063 or later)
 
 1. 安装 Windows 的 Docker 工具，步骤参照：[https://docs.docker.com/docker-for-windows/install/](https://docs.docker.com/docker-for-windows/install/)
 2. 右击右下角 Docker 图标，选择 Settings 进行设置
@@ -63,7 +68,7 @@ Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请
 
     **注意：安装完成后请使用 Windows 10 的 Powershell 来完成 Docker 相关操作**
 
-##### Windows 10 家庭版/家庭单语言版 x64
+#### Windows 10 家庭版/家庭单语言版 x64
 
 **以下两种方法任选其一**
 
@@ -74,13 +79,13 @@ Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请
     Docker Toolbox 安装方法：[https://docs.docker.com/toolbox/toolbox_install_windows/](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
 
-##### Windows 7 和 Windows 8/8.1 用户
+#### Windows 7 和 Windows 8/8.1 用户
 安装 Docker Toolbox ，并自行设置共享文件夹。
 
 安装方法：[https://docs.docker.com/toolbox/toolbox_install_windows/](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
 
-### 配置Docker加速器（可选）
+## 配置Docker加速器（可选）
 
 详细教程请参照：[https://help.aliyun.com/document_detail/60750.html](https://help.aliyun.com/document_detail/60750.html)
 
@@ -92,7 +97,13 @@ Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请
 git clone -b 2.0 https://github.com/Pigeon-Developer/PigeonOnlineJudgeDeploy && cd OnlineJudgeDeploy
 ```
 
-2.启动服务
+2.拉取镜像
+
+```bash
+docker-compose pull
+```
+
+3.启动服务
 
 ```bash
 docker-compose up -d
