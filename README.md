@@ -13,7 +13,7 @@ HUSTOJ，一个流行的信息学在线评测系统。跨平台，易安装，�
 ## 目录
 
 > 1. [环境搭建](#环境搭建)
-> 2. [配置Docker加速器](#配置Docker加速器可选)
+> 2. [配置Docker加速器](#配置Docker加速器（可选）)
 > 3. [部署PigeonOJ](#部署PigeonOJ)
 > 4. [常见问题](#常见问题)
 
@@ -21,27 +21,30 @@ HUSTOJ，一个流行的信息学在线评测系统。跨平台，易安装，�
 
 ## 环境搭建
 
+> 1. [Linux 环境](#linux-环境)
+> 2. [Windows 环境](#windows-环境)
+
 ### Linux 环境
 
 1. 安装必要的依赖
 
-    **注意：使用Python2的用户请务必升级到Python3.5及以上版本，否则部署过程中可能会出错**
+    **注意：使用Python2的用户请务必升级到Python3.5及以上版本，否则部署过程中可能出错**
 
-    - 基于 Ubuntu16.04 安装
+    + 基于 Ubuntu 16.04 安装
 
         ```bash
-        sudo apt-get update && sudo apt-get install -y vim python-pip curl git
+        sudo apt-get update && sudo apt-get install -y vim python3-pip curl git
         pip install docker-compose
         ```
 
-    - 基于 Ubuntu18.04 安装
+    + **基于 Ubuntu 18.04 安装（推荐）**
 
         ```bash
-        sudo apt update && sudo apt install -y vim python-pip curl git
+        sudo apt update && sudo apt install -y vim python3-pip curl git
         pip install docker-compose
         ```
 
-    - 其他系统
+    + 其他系统
 
         请自行搜索方法安装 `vim`、 `curl`、 `Python`、`pip`、`git`、`docker-compose` 。
 
@@ -53,6 +56,10 @@ HUSTOJ，一个流行的信息学在线评测系统。跨平台，易安装，�
     详细步骤参照： [https://docs.docker.com/install/](https://docs.docker.com/install/)
 
 ### Windows 环境
+
+> 1. [Windows 10 专业版/教育版/企业版 x64](#Windows-10-专业版/教育版/企业版-x64-Build-15063-or-later)
+> 2. [Windows 10 家庭版/家庭单语言版 x64](#Windows-10-家庭版/家庭单语言版-x64)
+> 3. [Windows 7 和 Windows 8/8.1 用户](#Windows-7-和-Windows-881-用户)
 
 **提示：Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请使用虚拟机安装 Linux 并将 OJ 安装在其中。**
 
@@ -70,7 +77,7 @@ HUSTOJ，一个流行的信息学在线评测系统。跨平台，易安装，�
 
 **以下两种方法任选其一**
 
-+ 安装 Hyper-V ，安装方法自行搜索。
++ 安装 Hyper-V ，安装方法自行搜索。安装完成后的步骤同 []()
 
 + 安装 Docker Toolbox，并自行设置共享文件夹。
 
@@ -92,16 +99,10 @@ HUSTOJ，一个流行的信息学在线评测系统。跨平台，易安装，�
 1.请选择磁盘空间富余的位置，运行下面的命令
 
 ```bash
-git clone -b 2.0 https://github.com/Pigeon-Developer/PigeonOnlineJudgeDeploy && cd OnlineJudgeDeploy
+git clone -b 2.0 https://github.com/Pigeon-Developer/PigeonOnlineJudgeDeploy.git && cd PigeonOnlineJudgeDeploy
 ```
 
-2.拉取镜像
-
-```bash
-docker-compose pull
-```
-
-3.启动服务
+2.启动服务
 
 ```bash
 docker-compose up -d
