@@ -4,17 +4,17 @@ HUSTOJ，一个流行的信息学在线评测系统。跨平台，易安装，�
 
 本项目是其2.0版本
 
-中文 | ENGLISH
+中文 | ~~ENGLISH~~
 
 ## 目录
 
-> 1. [环境搭建](#1.环境搭建)
-> 2. [部署PigeonOJ](#2.部署PigeonPJ)
-> 3. [常见问题](#3.常见问题)
+> 1. [环境搭建](#环境搭建)
+> 2. [部署PigeonOJ](#部署PigeonPJ)
+> 3. [常见问题](#常见问题)
 
 ---
 
-## 1.环境搭建
+## 环境搭建
 
 ### 安装Docker
 
@@ -26,16 +26,17 @@ HUSTOJ，一个流行的信息学在线评测系统。跨平台，易安装，�
 
     - 基于 Ubuntu16.04 安装
 
-    ```bash
-    sudo apt-get update && sudo apt-get install -y vim python-pip curl git
-    pip install docker-compose
-    ```
+        ```bash
+        sudo apt-get update && sudo apt-get install -y vim python-pip curl git
+        pip install docker-compose
+        ```
+
     - 基于 Ubuntu18.04 安装
 
-    ```bash
-    sudo apt update && sudo apt-get install -y vim python-pip curl git
-    pip install docker-compose
-    ```
+        ```bash
+        sudo apt update && sudo apt install -y vim python-pip curl git
+        pip install docker-compose
+        ```
 
     - 其他系统
 
@@ -50,11 +51,9 @@ HUSTOJ，一个流行的信息学在线评测系统。跨平台，易安装，�
 
 #### Windows 环境
 
-
 Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请使用虚拟机安装 Linux 并将 OJ 安装在其中。
 
-##### Windows 10 专业版 x64 
-以下教程仅适用于 **Win10 专业版 x64** 下的 `PowerShell` ， Win7/8/8.1 x64 请安装 Docker Toolbox ，安装方法：[https://docs.docker.com/toolbox/toolbox_install_windows/](https://docs.docker.com/toolbox/toolbox_install_windows/)
+##### Windows 10 专业版/教育版/企业版 x64 (Build 15063 or later)
 
 1. 安装 Windows 的 Docker 工具，步骤参照：[https://docs.docker.com/docker-for-windows/install/](https://docs.docker.com/docker-for-windows/install/)
 2. 右击右下角 Docker 图标，选择 Settings 进行设置
@@ -62,9 +61,52 @@ Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请
 4. 输入 Windows 的账号密码进行文件共享
 5. 安装 `Python`、`pip`、`git`、`docker-compose`，安装方法自行搜索。
 
+    **注意：安装完成后请使用 Windows 10 的 Powershell 来完成 Docker 相关操作**
+
+##### Windows 10 家庭版/家庭单语言版 x64
+
+**以下两种方法任选其一**
+
++ 安装 Hyper-V ，安装方法自行搜索。
+
++ 安装 Docker Toolbox，并自行设置共享文件夹。
+
+    Docker Toolbox 安装方法：[https://docs.docker.com/toolbox/toolbox_install_windows/](https://docs.docker.com/toolbox/toolbox_install_windows/)
+
+
+##### Windows 7 和 Windows 8/8.1 用户
+安装 Docker Toolbox ，并自行设置共享文件夹。
+
+安装方法：[https://docs.docker.com/toolbox/toolbox_install_windows/](https://docs.docker.com/toolbox/toolbox_install_windows/)
+
 
 ### 配置Docker加速器（可选）
 
 详细教程请参照：[https://help.aliyun.com/document_detail/60750.html](https://help.aliyun.com/document_detail/60750.html)
 
+## 部署PigeonOJ
+
+1.请选择磁盘空间富余的位置，运行下面的命令
+
+```bash
+git clone -b 2.0 https://github.com/Pigeon-Developer/PigeonOnlineJudgeDeploy && cd OnlineJudgeDeploy
+```
+
+2.启动服务
+
+```bash
+docker-compose up -d
+```
+
+根据网速情况，大约5到30分钟就可以自动搭建完成，全程无需人工干预。
+
+等命令执行完成，然后运行 `docker ps -a` ，当看到所有的容器的状态没有 `unhealthy` 或 `Exited (x) xxx` 就代表 OJ 已经启动成功。
+
+## 常见问题
+
+1. 我要定制自己的OJ
+
+    若需要对系统进行修改或二次开发，请参照各模块的 README ，修改完成后需自行构建 Docker 镜像并修改 docker-compose.yml
+
+2. 未完待续...
 
